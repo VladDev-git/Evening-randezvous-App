@@ -1,0 +1,33 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Imegs and Icon/icon/database.svg</file>
+        <file>Imegs and Icon/icon/help-circle.svg</file>
+        <file>Imegs and Icon/icon/home.svg</file>
+        <file>Imegs and Icon/icon/info.svg</file>
+        <file>Imegs and Icon/icon/list.svg</file>
+        <file>Imegs and Icon/icon/Menu_icon.svg</file>
+        <file>Imegs and Icon/icon/minus.svg</file>
+        <file>Imegs and Icon/icon/more-horizontal.svg</file>
+        <file>Imegs and Icon/icon/settings.svg</file>
+        <file>Imegs and Icon/icon/square.svg</file>
+        <file>Imegs and Icon/icon/user.svg</file>
+        <file>Imegs and Icon/icon/x.svg</file>
+        <file>Imegs and Icon/icon/x-circle.svg</file>
+        <file>Imegs and Icon/icon/x-octagon.svg</file>
+        <file>Imegs and Icon/imgs/OIG.png</file>
+        <file>Imegs and Icon/icon/normalSize.svg</file>
+        <file>Imegs and Icon/imgs/homePgPhoto.jfif</file>
+        <file>Imegs and Icon/icon/star.svg</file>
+        <file>Imegs and Icon/icon/con-arrow-right.png</file>
+        <file>Imegs and Icon/icon/map-pin.svg</file>
+        <file>Imegs and Icon/imgs/searchFront.jfif</file>
+        <file>Imegs and Icon/imgs/Depo.png</file>
+        <file>Imegs and Icon/imgs/3MikoluFront.png</file>
+        <file>Imegs and Icon/imgs/3MikoluRoom.png</file>
+        <file>Imegs and Icon/icon/book-open.svg</file>
+        <file>Imegs and Icon/icon/edit-3.svg</file>
+        <file>Imegs and Icon/icon/file-plus.svg</file>
+        <file>Imegs and Icon/icon/image.svg</file>
+        <file>Imegs and Icon/imgs/icon-profile-3524759.png</file>
+    </qresource>
+</RCC>
