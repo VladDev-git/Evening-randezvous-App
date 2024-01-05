@@ -28,6 +28,9 @@ QT_END_NAMESPACE
 
  private:
    QMap<QString, Place>* SearchList;
+   QString addFrontIMG_Path;
+   QString addRoomIMG_Path;
+   QString addDishIMG_Path;
 
  private slots:
    void onMinimizeClicked();
@@ -41,6 +44,10 @@ QT_END_NAMESPACE
    void SetPlaceDishIMG();
    void SetPlaceLogoIMG();
    void addPlace();
+
+ private:
+   void resetButtonStyles();
+   void updateButtonStyles();
 
  private:
    Ui::MainRecep *ui;

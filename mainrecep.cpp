@@ -1,9 +1,11 @@
 #include "mainrecep.h"
 #include "ui_mainrecep.h"
 
-void HomeAnimationPack(Ui::MainRecep *ui);
+void HomeAnimationPack(Ui::MainRecep* ui);
 void SearhAnimationPack(Ui::MainRecep* ui);
 void AddList(QMap<QString, Place>* list, QListWidget* widget);
+void AddList(QMap<QString, Place>* list, QString name, QListWidget* widget);
+void AddPageClear(Ui::MainRecep* ui);
 
 MainRecep::MainRecep(QWidget *parent)
    : QMainWindow(parent), ui(new Ui::MainRecep)
@@ -21,6 +23,8 @@ MainRecep::MainRecep(QWidget *parent)
    connect(ui->SetRoomIMGbtn, SIGNAL(clicked()), this, SLOT(SetPlaceRoomIMG()));
    connect(ui->SetDishIMGbtn, SIGNAL(clicked()), this, SLOT(SetPlaceDishIMG()));
    connect(ui->SetLogoIMGbtn, SIGNAL(clicked()), this, SLOT(SetPlaceLogoIMG()));
+   connect(ui->addPlaceBTN, SIGNAL(clicked()), this, SLOT(addPlace()));
+   connect(ui->addPlaceSubBtn, SIGNAL(clicked()), this, SLOT(AddPage()));
 
    // Home page
 
@@ -108,18 +112,21 @@ void MainRecep::onCloseClicked()
 void MainRecep::SearchPlace()
 {
    ui->stackedWidget->setCurrentIndex(1);
+   updateButtonStyles();
    SearhAnimationPack(ui);
 }
 
 void MainRecep::HomePage()
 {
    ui->stackedWidget->setCurrentIndex(0);
+   updateButtonStyles();
    HomeAnimationPack(ui);
 }
 
 void MainRecep::AddPage()
 {
    ui->stackedWidget->setCurrentIndex(3);
+   updateButtonStyles();
 }
 
 void MainRecep::AdditionalInfoPlace()
@@ -152,8 +159,12 @@ void MainRecep::SetPlaceRoomIMG()
    {
       QPixmap pixmap(filePath);
       ui->addPlaceRoomLBL->setPixmap(pixmap.scaled(ui->addPlaceRoomLBL->size(), Qt::KeepAspectRatio));
+      addRoomIMG_Path = filePath;
    }
+   else
+   {
 
+   }
 }
 
 void MainRecep::SetPlaceDishIMG()
@@ -164,6 +175,11 @@ void MainRecep::SetPlaceDishIMG()
    {
       QPixmap pixmap(filePath);
       ui->addPlaceDishLBL->setPixmap(pixmap.scaled(ui->addPlaceDishLBL->size(), Qt::KeepAspectRatio));
+      addDishIMG_Path = filePath;
+   }
+   else
+   {
+
    }
 }
 
@@ -175,6 +191,11 @@ void MainRecep::SetPlaceLogoIMG()
    {
       QPixmap pixmap(filePath);
       ui->addPlaceLogoLBL->setPixmap(pixmap.scaled(ui->addPlaceLogoLBL->size(), Qt::KeepAspectRatio));
+      addFrontIMG_Path = filePath;
+   }
+   else
+   {
+
    }
 }
 
@@ -219,11 +240,46 @@ void MainRecep::addPlace()
    else
    {
       Dish* addNewDish = new Dish(ui->addPlaceDishName->text(), ui->addPlaceDishPrice->text(), ui->addPlaceIngradient->text(),
-         ui->addPlaceWeight->text(), QString::number(ui->addPlaceDishLBL->pixmap().cacheKey()));
+         ui->addPlaceWeight->text(), addDishIMG_Path);
 
       (*SearchList)[ui->addPlaceName->text()] = Place(ui->addPlaceName->text(), ui->addPlaceAddres->text(),
-         ui->addPlaceRating->text().toDouble(), ui->addPlaceContactNumber->text(), ui->addPlaceDiscription->text(), "",
-         QString::number(ui->addPlaceLogoLBL->pixmap().cacheKey()), QString::number(ui->addPlaceRoomLBL->pixmap().cacheKey()), addNewDish);
+         ui->addPlaceRating->text().toDouble(), ui->addPlaceContactNumber->text(), "", ui->addPlaceDiscription->text(),
+         addFrontIMG_Path, addRoomIMG_Path, addNewDish);
+
+      //AddList(SearchList, (*SearchList)[ui->addPlaceName->text()].GetName(), ui->placeList);
+      QListWidgetItem* item = new QListWidgetItem(QIcon(addFrontIMG_Path), ui->addPlaceName->text());
+      item->setData(Qt::UserRole, ui->addPlaceName->text());
+      ui->placeList->addItem(item);
+
+      AddPageClear(ui);
+   }
+}
+
+void MainRecep::resetButtonStyles()
+{
+   QString inactiveButtonStyle = "";
+   ui->homeBtn->setStyleSheet(inactiveButtonStyle);
+   ui->addPlaceBtn->setStyleSheet(inactiveButtonStyle);
+   ui->searchPlaceBtn->setStyleSheet(inactiveButtonStyle);
+}
+
+void MainRecep::updateButtonStyles()
+{
+   resetButtonStyles();
+
+   QString activeButtonStyle = "background-color: #343b47; color: #ffffff;";
+   int currentIndex = ui->stackedWidget->currentIndex();
+
+   switch (currentIndex) {
+   case 0:
+      ui->homeBtn->setStyleSheet(activeButtonStyle);
+      break;
+   case 1:
+      ui->searchPlaceBtn->setStyleSheet(activeButtonStyle);
+      break;
+   case 3:
+      ui->addPlaceBtn->setStyleSheet(activeButtonStyle);
+      break;
    }
 }
 
@@ -370,6 +426,38 @@ void AddList(QMap<QString, Place>* list, QListWidget* widget)
       widget->addItem(item);
    }
 }
+
+// void AddList(QMap<QString, Place>* list, QString name, QListWidget* widget)
+// {
+//    QString user_name = (*list)[name].GetName();
+//    QString path = (*list)[name].GetFrontImgPath();
+//    QListWidgetItem* item = new QListWidgetItem(QIcon(path), user_name.simplified());
+//    item->setData(Qt::UserRole, user_name);
+//    widget->addItem(item);
+// }
+
+void AddPageClear(Ui::MainRecep* ui)
+{
+   ui->addPlaceName->setText("");
+   ui->addPlaceAddres->setText("");
+   ui->addPlaceRating->setText("");
+   ui->addPlaceContactNumber->setText("");
+   ui->addPlaceDiscription->setText("");
+   QPixmap pixmapRoom(":/Imegs and Icon/imgs/icon-profile-3524759.png");
+   ui->addPlaceRoomLBL->setPixmap(pixmapRoom);
+   QPixmap pixmapDish(":/Imegs and Icon/imgs/icon-profile-3524759.png");
+   ui->addPlaceDishLBL->setPixmap(pixmapDish);
+   QPixmap pixmapLogo(":/Imegs and Icon/icon/user.svg");
+   ui->addPlaceLogoLBL->setPixmap(pixmapLogo);
+   ui->addPlaceDishName->setText("");
+   ui->addPlaceDishPrice->setText("");
+   ui->addPlaceIngradient->setText("");
+   ui->addPlaceWeight->setText("");
+
+   ui->stackedWidget->setCurrentIndex(1);
+}
+
+
 
 
 

@@ -4,23 +4,23 @@
 067 333 8880
 "Сімейна ресторація «ТРИ МИКОЛИ» у Тернополі. Ресторан “Три Миколи” у Тернополі – це ресторан для всієї родини, місце де завжди затишно, комфортно та смачно, а ще демократичні ціни. Також окрім цього нашою перевагою є велика ігрова кімната для дітей. Поки батьки відпочивають, діти граються та теж весело проводять час. Для резерву телефонуйте: +380 673 338 880."
 Є літній майданчик · Є смачні коктейлі · Є дитяче меню
-C:/cpp/projectsQt/Evening rendezvous Qt/Imegs and Icon/imgs/3MikoluFront.png
-C:/cpp/projectsQt/Evening rendezvous Qt/Imegs and Icon/imgs/3MikoluRoom.png
+C:/cpp/projectsQt/LB_OOP_4/Imegs and Icon/imgs/3MikoluFront.png
+C:/cpp/projectsQt/LB_OOP_4/Imegs and Icon/imgs/3MikoluRoom.png
 Піца 4 М'яса
 149 UAH
 томатний соус, сир моцарела, шинка, бочок, салямі, ковбаски гриль
 500г
-C:/cpp/projectsQt/Evening rendezvous Qt/Imegs and Icon/imgs/3MikoluDish.jpeg
+C:/cpp/projectsQt/LB_OOP_4/Imegs and Icon/imgs/3MikoluDish.jpeg
 DEPO FOOD BAR
 вулиця Богдана Хмельницького, 10А, Тернопіль, Тернопільська область, 46001
 8.6
 068 700 8060
 "DEPO FOOD BAR — це СМАК – нереальний і зовсім новий! Це найбільш сирний СИР, який ти пробував в своєму житті! Це соковита КОТЛЕТА приготовлена з 100% м’яса. Це хрустка і ніжна БУЛОЧКА. Це найсвіжіші ОВОЧІ та ЗЕЛЕНЬ. Це авторські СОУСИ і СПЕЦІЇ. А все це разом вдало поєднуться у неймовірні БУРГЕРИ! Ну і давайте не будемо забувати, що італійська піца – це давно класика! Всю цю смакоту доповнюють ситні пательні, перші страви і салати Хочеш ситний обід? – У нас для тебе авторське меню від шефа! Хочеш романтичну вечерю? – Приходь, підготуємо наші найкращі страви та напої! Хочеш незабутньо провести час на крутій вечірці? - Наш бармен вже приготував шейкер для найвибуховіших коктейлів.
 Тссс! У нас ще є кальянний зал Ми відкриті з 11:00 до 00:00"
-C:/cpp/projectsQt/Evening rendezvous Qt/Imegs and Icon/imgs/Depo.png
-C:/cpp/projectsQt/Evening rendezvous Qt/Imegs and Icon/imgs/DepoRoom.jpg
+C:/cpp/projectsQt/LB_OOP_4/Imegs and Icon/imgs/Depo.png
+C:/cpp/projectsQt/LB_OOP_4/Imegs and Icon/imgs/DepoRoom.jpg
 Піца Супрім Блю
 160 UAH
 Вершковий соус, бекон, куяче філе, кукурудза, сир моцарела, сир Дор-Блю
 500 г
-C:/cpp/projectsQt/Evening rendezvous Qt/Imegs and Icon/imgs/DepoDish.jpg
+C:/cpp/projectsQt/LB_OOP_4/Imegs and Icon/imgs/DepoDish.jpg

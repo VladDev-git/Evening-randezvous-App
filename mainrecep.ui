@@ -138,7 +138,12 @@ border-bottom-left-radius: 10px;
              <item>
               <widget class="QPushButton" name="homeBtn">
                <property name="styleSheet">
-                <string notr="true">background-color: rgb(31, 35, 42);</string>
+                <string notr="true">QPushButton{
+background-color: rgb(31, 35, 42);
+}
+
+
+</string>
                </property>
                <property name="text">
                 <string>Home</string>
@@ -1490,7 +1495,7 @@ border-bottom-right-radius: 35px;</string>
                                  <number>0</number>
                                 </property>
                                 <item alignment="Qt::AlignBottom">
-                                 <widget class="QPushButton" name="pushButton_4">
+                                 <widget class="QPushButton" name="addPlaceSubBtn">
                                   <property name="minimumSize">
                                    <size>
                                     <width>100</width>
@@ -2602,6 +2607,11 @@ background-color: rgb(31, 35, 42);
                        </item>
                        <item>
                         <widget class="QPushButton" name="SetLogoIMGbtn">
+                         <property name="styleSheet">
+                          <string notr="true">QPushButton:pressed{
+background-color: rgb(31, 35, 42);
+}</string>
+                         </property>
                          <property name="text">
                           <string>Set place logo</string>
                          </property>
